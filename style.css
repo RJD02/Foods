@@ -27,6 +27,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  position: relative;
 }
 
 .section-heading {
@@ -39,18 +40,16 @@ html {
   text-shadow: 0.3rem 0.3rem 0.3rem #000;
 }
 
-.section1-icons {
-    font-size: 35rem;
-    color: #a79a2d;
-    position: absolute;
-    transform: translate(0, +30%) scale(0);
-    text-shadow: 0.2rem 0.2rem 0.2rem #000;
+.section1-icons i{
+  font-size: 35rem;
+  color: #a79a2d;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0);
+  text-shadow: 0.2rem 0.2rem 0.2rem #000;
 }
 
 .section1-icons .change {
-  transform: translate(0, +30%) scale(1);
-  background-color: red;
-  color: purple;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 /* End of Section1 */
