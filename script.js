@@ -1,8 +1,13 @@
-const icons = document.querySelectorAll('.section1-icons i');
-let counter = 0;
+const icons = document.querySelectorAll(".section1-icons i");
+let counter = 1;
 setInterval(() => {
-    counter = counter % icons.length + 1;
-    const icon = document.querySelector('.section1-icons .change');
-    icon.classList.remove('change');
-    icon.nextElementSibling.classList.add('change');
-}, 1000);
+  counter++;
+  const icon = document.querySelector(".section1-icons .change");
+  icon.classList.remove("change");
+  if (counter > icons.length) {
+    icons[0].classList.add("change");
+    counter = 1;
+  } else {
+    icon.nextElementSibling.classList.add("change");
+  }
+}, 4000);
