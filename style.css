@@ -149,3 +149,23 @@ html {
 
 }
 /* End of Section2 */
+/* Section 3 */
+.section3 {
+  background-color: #333;
+  padding: 5rem 0;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.food-img {
+  width: 24vw;
+  height: 15vw;
+  object-fit: cover;
+}
+
+/* End of section 3 */
