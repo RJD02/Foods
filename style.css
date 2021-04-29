@@ -192,6 +192,7 @@ html {
   width: 24vw;
   height: 15vw;
   object-fit: cover;
+  box-shadow: 0.3rem 0.3rem 0.1rem #e92929, 0.5rem 0.5rem 0.1rem #a2e946, 0.7rem .7rem .1rem #297ce9, .9rem .9rem .1rem #e92999;
 }
 
 .food-name {
@@ -216,6 +217,5 @@ html {
   text-transform: uppercase;
   color: #fff;
 }
-
 
 /* End of section 3 */
