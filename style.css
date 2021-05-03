@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
-
 /* Common styles */
 * {
   margin: 0;
@@ -13,7 +12,6 @@
 
 html {
   font-size: 62.5%;
-  /* Now 1 rem = 10px */
 }
 
 .section-heading {
@@ -25,7 +23,6 @@ html {
   letter-spacing: 0.5rem;
   text-shadow: 0.3rem 0.3rem 0.3rem #000;
 }
-
 /* End of Common Styles */
 
 /* Navbar */
@@ -34,17 +31,107 @@ html {
   height: 14rem;
   background-color: #000;
   position: fixed;
-  position: fixed;
   top: -14rem;
-  z-index: 100;
+  z-index: 150;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.2rem 0.2rem 0.2rem #000;
+  /* text-align: center; */
+  transition: top 0.4s;
 }
+
+.navbar.change {
+  top: 0;
+  transition: top 0.4s 0.2s;
+}
+
+.navbar-link {
+  color: #aaa;
+  margin: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+  opacity: 0;
+  transition: color 0.3, opacity, 2s;
+}
+
+.change .navbar-link {
+  opacity: 1;
+}
+
+.change .navbar-link:nth-child(1) {
+  transition: opacity 0.4s 0.5s, color 0.3s;
+}
+
+.change .navbar-link:nth-child(2) {
+  transition: opacity 0.4s 0.6s, color 0.3s;
+}
+
+.change .navbar-link:nth-child(3) {
+  transition: opacity 0.4s 0.7s, color 0.3s;
+}
+
+.change .navbar-link:nth-child(4) {
+  transition: opacity 0.4s 0.8s, color 0.3s;
+}
+
+.change .navbar-link:nth-child(5) {
+  transition: opacity 0.4s 0.9s, color 0.3s;
+}
+
+.navbar-link:hover {
+  color: #fff;
+}
+
+.navbar-link i {
+  font-size: 7rem;
+}
+
+.navbar-link span {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.menu {
+  width: 4rem;
+  height: 6rem;
+  background-color: #000;
+  position: fixed;
+  top: 1rem;
+  left: 5rem;
+  border-radius: 30rem 30rem 15rem 15rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem #000, -0.1rem -0.1rem 0.1rem #000;
+  cursor: pointer;
+  z-index: 100;
+  transition: top 0.4s 0.2s;
+}
+
+.menu.change {
+  top: 15rem;
+  transition: top 0.4s;
+}
+
+.menu::before {
+  content: "";
+  width: 0.3rem;
+  height: 15rem;
+  background-color: #000;
+  position: absolute;
+  top: -15rem;
+  left: calc(50% - 0.15rem);
+  box-shadow: 0.1rem 0rem 0.1rem #000;
+  /* transition: all 0.4s; */
+}
+
 /* End of Navbar */
 
-/* .container {
-  display: flex;
-} */
-/* Section1 */
-.section1 {
+/* Section 1 */
+.section-1 {
   width: 100%;
   height: 100vh;
   background-color: #333;
@@ -52,10 +139,9 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  position: relative;
 }
 
-.section1-icons i{
+.section-1-icons i {
   font-size: 35rem;
   color: #a79a2d;
   position: absolute;
@@ -64,15 +150,14 @@ html {
   transition: transform 0.3s;
 }
 
-.section1-icons .change {
+.section-1-icons i.change {
   transform: translate(-50%, -50%) scale(1);
   transition: transform 0.3s 0.3s;
 }
+/* End of Section 1 */
 
-/* End of Section1 */
-
-/* Section2 */
-.section2 {
+/* Section 2 */
+.section-2 {
   width: 100%;
   height: 100vh;
   background-color: #222;
@@ -85,6 +170,11 @@ html {
 .cards-container {
   display: flex;
   justify-content: space-evenly;
+  /* padding: 0 5%; */
+}
+
+.card-wrapper {
+  perspective: 1000rem;
 }
 
 .card {
@@ -98,7 +188,7 @@ html {
   box-shadow: 1rem 1rem 1rem #000;
   position: relative;
   transform: rotateY(20deg) skewX(-2deg);
-  transition: transform .5s, boxshadow .5s;
+  transition: transform 0.5s, box-shadow 0.5s;
 }
 
 .card:hover {
@@ -116,20 +206,20 @@ html {
   left: -1rem;
   transform: skewY(45deg);
   transform-origin: right;
-  box-shadow: -.1rem -.1rem .1rem #000;
+  box-shadow: -0.1rem -0.1rem 0.1rem #000;
 }
 
 .card::after {
   content: "";
-  height: 1rem;
   width: 100%;
-  background-color: #818317;
+  height: 1rem;
+  background-color: #8f8317;
   position: absolute;
   top: -1rem;
   left: 0;
   transform: skewX(45deg);
   transform-origin: bottom;
-  box-shadow: -.1rem -.1rem .1rem #000;
+  box-shadow: -0.1rem -0.1rem 0.1rem #000;
 }
 
 .card-img {
@@ -148,7 +238,7 @@ html {
 
 .card-btn {
   width: 70%;
-  background: #111;
+  background-color: #111;
   color: #888;
   border-radius: 5rem;
   font-size: 1.5rem;
@@ -159,11 +249,11 @@ html {
   padding: 0.5rem 0;
   cursor: pointer;
   box-shadow: -0.2rem -0.2rem 0.2rem #000;
-
 }
-/* End of Section2 */
+/* End of Section 2 */
+
 /* Section 3 */
-.section3 {
+.section-3 {
   background-color: #333;
   padding: 5rem 0;
 }
@@ -190,11 +280,7 @@ html {
   height: 0;
   background-color: #fff;
   z-index: 10;
-  transition: height .5s;
-}
-
-.gallery-link:hover::before {
-  height: 80%;
+  transition: height 0.5s;
 }
 
 .gallery-link::after {
@@ -208,6 +294,10 @@ html {
   transition: width 0.5s;
 }
 
+.gallery-link:hover::before {
+  height: 80%;
+}
+
 .gallery-link:hover::after {
   width: 90%;
 }
@@ -216,15 +306,17 @@ html {
   width: 24vw;
   height: 15vw;
   object-fit: cover;
-  box-shadow: 0.3rem 0.3rem 0.1rem #e92929, 0.5rem 0.5rem 0.1rem #a2e946, 0.7rem .7rem .1rem #297ce9, .9rem .9rem .1rem #e92999;
+  box-shadow: 0.3rem 0.3rem 0.1rem #e92929, 0.5rem 0.5rem 0.1rem #a2e946,
+    0.7rem 0.7rem 0.1rem #297ce9, 0.9rem 0.9rem 0.1rem #e92999;
+  transition: all 0.5s;
 }
 
 .gallery-link:hover .food-img {
-  box-shadow: 1rem 1rem 0.1rem #e92929, 2rem 2rem 0.1rem #a2e946, 3rem 3rem .1rem #297ce9, 4rem 4rem .1rem #e92999;
-  transition: all 0.5s;
+  box-shadow: 1rem 1rem 0.1rem #e92929, 2rem 2rem 0.1rem #a2e946,
+    3rem 3rem 0.1rem #297ce9, 4rem 4rem 0.1rem #e92999;
+  transform: scale(1.1);
   filter: blur(0.5rem);
   opacity: 0.5;
-  transform: scale(1.1);
 }
 
 .food-name {
@@ -266,36 +358,38 @@ html {
   visibility: visible;
   transition: opacity 1s 1s;
 }
+/* End of Section 3 */
 
-/* End of section 3 */
 /* Section 4 */
-.section4 {
+
+.section-4 {
   width: 100%;
-  height: 40vh;
+  height: 30vh;
   background-color: #222;
   display: flex;
   justify-content: space-around;
-  align-items: flex-start;
   padding: 3rem 0;
   position: relative;
+  align-items: flex-start;
 }
 
-.section4-text {
+.section-4-text {
   text-transform: uppercase;
 }
 
-.section4-heading {
+.section-4-heading {
   font-size: 4rem;
   font-weight: 900;
   color: #a79a2d;
 }
 
-.section4-paragraph {
+.section-4-paragraph {
   font-size: 1.5rem;
   color: #888;
 }
 
 .signup-form {
+  /* position: relative; */
   display: flex;
   align-items: center;
 }
@@ -333,10 +427,110 @@ html {
   font-size: 1.7rem;
   font-weight: 200;
   color: #eee;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   border-top: 0.1rem solid #888;
   padding-top: 6rem;
   width: 100%;
   text-align: center;
 }
 /* End of Section 4 */
+
+/* Responsive */
+@media (max-width: 1400px) {
+  html {
+    font-size: 50%;
+  }
+
+  .section-2 {
+    height: auto;
+  }
+
+  .cards-container {
+    margin-top: 10rem;
+  }
+
+  .gallery-link {
+    width: 40rem;
+    height: 25rem;
+    margin: 5rem;
+  }
+
+  .food-img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .section-heading {
+    font-size: 9rem;
+    margin: 0 5rem;
+  }
+
+  .section-1-icons i {
+    font-size: 25rem;
+  }
+
+  .cards-container {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    margin: 5rem;
+  }
+
+  .section-4 {
+    height: 30rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar-link {
+    margin: 2rem;
+  }
+
+  .navbar-link i {
+    font-size: 4rem;
+  }
+
+  .navbar-link span {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .section-heading {
+    font-size: 7rem;
+    margin: 0 10rem;
+  }
+
+  .section-1-icons i {
+    font-size: 20rem;
+  }
+
+  .menu {
+    left: 2rem;
+  }
+
+  .section-4 {
+    height: 40rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .section-4-text {
+    margin-bottom: 8rem;
+  }
+}
+
+@media (max-width: 550px) {
+  html {
+    font-size: 40%;
+  }
+
+  .navbar-link {
+    margin: 0 0.7rem;
+  }
+}
+/* End of Responsive */
